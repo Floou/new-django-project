@@ -1,5 +1,6 @@
 from django.db import models
 
+
 class Command(models.Model):
     command = models.CharField(max_length=128)
     win = models.IntegerField(default=0)
@@ -17,9 +18,9 @@ class Composition(models.Model):
     number = models.IntegerField(default=0)
     command = models.CharField(max_length=128)
 
-
     def __str__(self):
         return self.name
+
 
 class Match(models.Model):
     command = models.CharField(max_length=128)
