@@ -9,6 +9,10 @@ class Team(models.Model):
     def __str__(self):
         return self.name_team
 
+    class Meta:
+        verbose_name = 'Команды'
+        verbose_name_plural = 'Команда'
+
 
 class Trainer(models.Model):
     team = models.ForeignKey(Team, on_delete=models.CASCADE)
@@ -17,6 +21,10 @@ class Trainer(models.Model):
 
     def __str__(self):
         return self.surname
+
+    class Meta:
+        verbose_name = 'Тренеры'
+        verbose_name_plural = 'Тренер'
 
 
 class LineUp(models.Model):
@@ -29,15 +37,25 @@ class LineUp(models.Model):
     def __str__(self):
         return self.name
 
+    class Meta:
+        verbose_name = 'Состав команды'
+        verbose_name_plural = 'Состав команд'
+
 
 class Match(models.Model):
-    command = models.ForeignKey(Team, on_delete=models.CASCADE)
-    rival = models.CharField(max_length=128)
+    owner = models.ForeignKey(Team, on_delete=models.CASCADE)
+    guest = models.CharField(max_length=128)
     result_match = models.IntegerField(default=0)
     broadcast = models.IntegerField(default=0)
     interceptions = models.IntegerField(default=0)
     tool = models.IntegerField(default=0)
     block_shot = models.IntegerField(default=0)
+    win_owner = models.BooleanField(default=True)
+    win_guest = models.BooleanField(default=True)
 
     def __str__(self):
-        return self.command
+        return str(self.result_match)
+
+    class Meta:
+        verbose_name = 'Матчи'
+        verbose_name_plural = 'Матч'

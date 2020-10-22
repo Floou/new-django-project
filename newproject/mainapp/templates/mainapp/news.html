@@ -1,5 +1,14 @@
 {% extends 'mainapp/base.html' %}
 
 {% block content %}
-    <h1>Новости на сегодня</h1>
+    <h1>Лучшие команды сезона</h1>
+     <div class="news-menu">
+        <ul>
+            {% for item in name_team %}
+                <li>
+                    <a href="#">{{ item }}</a>
+                </li>
+            {% endfor %}
+        </ul>
+    </div>
 {% endblock %}
