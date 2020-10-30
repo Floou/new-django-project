@@ -27,8 +27,28 @@ class Trainer(models.Model):
         verbose_name_plural = 'Тренер'
 
 
-class LineUp(models.Model):
-    trainer = models.ForeignKey(Trainer, on_delete=models.CASCADE)
+class Match(models.Model):
+    team_owner = models.ForeignKey(Team, related_name='match', on_delete=models.CASCADE)
+    team_guest = models.ForeignKey('Team', related_name='match1', on_delete=models.CASCADE)
+    result_match = models.IntegerField(default=0)
+    broadcast = models.IntegerField(default=0)
+    interceptions = models.IntegerField(default=0)
+    tool = models.IntegerField(default=0)
+    block_shot = models.IntegerField(default=0)
+    win_owner = models.BooleanField(default=True)
+    win_guest = models.BooleanField(default=False)
+    created = models.DateField(auto_now_add=True)
+    changed = models.DateField(auto_now=True)
+
+    def __str__(self):
+        return str(self.result_match)
+
+    class Meta:
+        verbose_name = 'Матчи'
+        verbose_name_plural = 'Матч'
+
+
+class Player(models.Model):
     name = models.CharField(max_length=128)
     surname = models.CharField(max_length=128)
     number = models.IntegerField(default=0)
@@ -38,24 +58,5 @@ class LineUp(models.Model):
         return self.name
 
     class Meta:
-        verbose_name = 'Состав команды'
-        verbose_name_plural = 'Состав команд'
-
-
-class Match(models.Model):
-    owner = models.ForeignKey(Team, on_delete=models.CASCADE)
-    guest = models.CharField(max_length=128)
-    result_match = models.IntegerField(default=0)
-    broadcast = models.IntegerField(default=0)
-    interceptions = models.IntegerField(default=0)
-    tool = models.IntegerField(default=0)
-    block_shot = models.IntegerField(default=0)
-    win_owner = models.BooleanField(default=True)
-    win_guest = models.BooleanField(default=True)
-
-    def __str__(self):
-        return str(self.result_match)
-
-    class Meta:
-        verbose_name = 'Матчи'
-        verbose_name_plural = 'Матч'
+        verbose_name = 'Игроки'
+        verbose_name_plural = 'Игрок'

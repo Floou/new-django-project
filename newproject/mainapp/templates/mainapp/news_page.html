@@ -1,12 +1,12 @@
 {% extends 'mainapp/base.html' %}
 
 {% block content %}
-    <h1>Лучшие команды сезона</h1>
-     <div class="news-menu">
+    <h1>Страница команд</h1>
+    <div class="team-menu">
         <ul>
-            {% for item in name_team %}
+            {% for item in team %}
                 <li>
-                    <a href="{% url 'news_page' item.pk %}">
+                    <a href="#">
                         {{ item }}
                     </a>
                 </li>

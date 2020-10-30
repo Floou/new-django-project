@@ -2,7 +2,7 @@
 <html lang="ru">
 <head>
     <meta charset="UTF-8">
-    <title>Главная</title>
+    <title>{{ page_title|default:"Мой сайт" }}</title>
     {% block css %}
         <link rel="stylesheet" href="/static/css/main.css">
     {% endblock %}

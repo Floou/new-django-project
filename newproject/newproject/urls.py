@@ -18,8 +18,9 @@ from django.contrib import admin
 from django.urls import path
 
 urlpatterns = [
-    path('', mainapp.index),
-    path('news/', mainapp.news),
+    path('', mainapp.index, name='index'),
+    path('news/', mainapp.news, name='new'),
+    path('news/team/<int:pk>', mainapp.news_page, name='news_page'),
     path('registration/', mainapp.registration),
     path('admin/', admin.site.urls),
 ]
