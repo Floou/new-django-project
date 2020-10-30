@@ -2,11 +2,11 @@
 
 {% block content %}
     <h1>Лучшие команды сезона</h1>
-     <div class="news-menu">
+     <div class="commands-menu">
         <ul>
             {% for item in name_team %}
                 <li>
-                    <a href="{% url 'news_page' item.pk %}">
+                    <a href="{% url 'commands_page' item.pk %}">
                         {{ item }}
                     </a>
                 </li>

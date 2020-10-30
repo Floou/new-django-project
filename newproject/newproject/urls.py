@@ -19,8 +19,8 @@ from django.urls import path
 
 urlpatterns = [
     path('', mainapp.index, name='index'),
-    path('news/', mainapp.news, name='new'),
-    path('news/team/<int:pk>', mainapp.news_page, name='news_page'),
+    path('commands/', mainapp.commands, name='commands'),
+    path('commands/team/<int:pk>', mainapp.commands_page, name='commands_page'),
     path('registration/', mainapp.registration),
     path('admin/', admin.site.urls),
 ]

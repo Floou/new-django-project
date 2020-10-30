@@ -7,27 +7,28 @@ def index(request):
     return render(request, 'mainapp/index.html')
 
 
-def news(request):
+def commands(request):
     name_team = Team.objects.all()
     context = {
         'name_team': name_team,
-        'page_title': 'Новости'
+        'page_title': 'Команды'
     }
 
-    return render(request, 'mainapp/news.html', context)
+    return render(request, 'mainapp/commands.html', context)
 
 
 def registration(request):
     context = {
-        'page_title': 'Тренеры'
+        'page_title': 'Регистрация'
     }
     return render(request, 'mainapp/registration.html', context)
 
 
-def news_page(request, pk):
+def commands_page(request, pk):
     team = Trainer.objects.filter(team_id=pk)
     context = {
         'team': team,
-        'page_title': 'Тренеры'
+        'page_title': 'Тренер'
     }
-    return render(request, 'mainapp/news_page.html', context)
+    return render(request, 'mainapp/commands_page.html', context)
+

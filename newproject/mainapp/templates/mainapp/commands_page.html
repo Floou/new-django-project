@@ -1,12 +1,14 @@
 {% extends 'mainapp/base.html' %}
 
 {% block content %}
-    <h1>Тренеры</h1>
+    <h1>Тренер</h1>
     <div class="team-menu">
         <ul>
             {% for item in team %}
                 <li>
-                    <a href="#">{{ item }}</a>
+                    <a href="#">
+                        {{ item }}
+                    </a>
                 </li>
             {% endfor %}
         </ul>
