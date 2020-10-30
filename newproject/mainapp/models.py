@@ -16,7 +16,7 @@ class Team(models.Model):
 
 class Trainer(models.Model):
     team = models.ForeignKey(Team, on_delete=models.CASCADE)
-    name = models.CharField(max_length=128)
+    name = models.CharField('Имя', max_length=128)
     surname = models.CharField(max_length=128)
 
     def __str__(self):
@@ -28,8 +28,8 @@ class Trainer(models.Model):
 
 
 class Match(models.Model):
-    team_owner = models.ForeignKey(Team, related_name='match', on_delete=models.CASCADE)
-    team_guest = models.ForeignKey('Team', related_name='match1', on_delete=models.CASCADE)
+    team_owner = models.ForeignKey(Team, related_name='team_1', on_delete=models.CASCADE)
+    team_guest = models.ForeignKey('Team', related_name='team_2', on_delete=models.CASCADE)
     result_match = models.IntegerField(default=0)
     broadcast = models.IntegerField(default=0)
     interceptions = models.IntegerField(default=0)

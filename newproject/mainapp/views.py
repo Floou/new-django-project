@@ -18,13 +18,16 @@ def news(request):
 
 
 def registration(request):
-    return render(request, 'mainapp/registration.html')
+    context = {
+        'page_title': 'Тренеры'
+    }
+    return render(request, 'mainapp/registration.html', context)
 
 
 def news_page(request, pk):
-    team = Team.objects.filter(team_id=pk)
+    team = Trainer.objects.filter(team_id=pk)
     context = {
         'team': team,
-        'page_title': 'Страница команд'
+        'page_title': 'Тренеры'
     }
     return render(request, 'mainapp/news_page.html', context)
