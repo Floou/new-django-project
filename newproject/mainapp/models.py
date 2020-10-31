@@ -2,9 +2,9 @@ from django.db import models
 
 
 class Team(models.Model):
-    name_team = models.CharField(max_length=128)
-    win = models.IntegerField(default=0)
-    defeat = models.IntegerField(default=0)
+    name_team = models.CharField('Команда', max_length=128)
+    win = models.IntegerField('Победы', default=0)
+    defeat = models.IntegerField('Поражения', default=0)
 
     def __str__(self):
         return self.name_team
@@ -17,7 +17,7 @@ class Team(models.Model):
 class Trainer(models.Model):
     team = models.ForeignKey(Team, on_delete=models.CASCADE)
     name = models.CharField('Имя', max_length=128)
-    surname = models.CharField(max_length=128)
+    surname = models.CharField('Фамилия', max_length=128)
 
     def __str__(self):
         return self.surname
@@ -30,13 +30,13 @@ class Trainer(models.Model):
 class Match(models.Model):
     team_owner = models.ForeignKey(Team, related_name='team_1', on_delete=models.CASCADE)
     team_guest = models.ForeignKey('Team', related_name='team_2', on_delete=models.CASCADE)
-    result_match = models.IntegerField(default=0)
-    broadcast = models.IntegerField(default=0)
-    interceptions = models.IntegerField(default=0)
-    tool = models.IntegerField(default=0)
-    block_shot = models.IntegerField(default=0)
-    win_owner = models.BooleanField(default=True)
-    win_guest = models.BooleanField(default=False)
+    result_match = models.IntegerField('Результат матча', default=0)
+    broadcast = models.IntegerField('Передачи', default=0)
+    interceptions = models.IntegerField('Перехваты', default=0)
+    rebounds = models.IntegerField('Подборы', default=0)
+    block_shot = models.IntegerField('Блокшоты', default=0)
+    win_owner = models.BooleanField('Победа хозяев', default=True)
+    win_guest = models.BooleanField('Победа гостей', default=False)
     created = models.DateField(auto_now_add=True)
     changed = models.DateField(auto_now=True)
 
@@ -49,10 +49,10 @@ class Match(models.Model):
 
 
 class Player(models.Model):
-    name = models.CharField(max_length=128)
-    surname = models.CharField(max_length=128)
-    number = models.IntegerField(default=0)
-    position = models.CharField(max_length=128)
+    name = models.CharField('Имя', max_length=128)
+    surname = models.CharField('Фамилия', max_length=128)
+    number = models.IntegerField('Номер', default=0)
+    position = models.CharField('Позиция', max_length=128)
 
     def __str__(self):
         return self.name
