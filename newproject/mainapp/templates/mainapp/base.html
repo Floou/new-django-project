@@ -13,13 +13,16 @@
 <div class="main-menu">
     <ul>
         <li>
-            <a href="/">Главная</a>
+            <a href="{% url 'main:index' %}">Главная</a>
         </li>
         <li>
-            <a href="/commands/">Команды</a>
+            <a href="{% url 'main:commands' %}">Команды</a>
         </li>
         <li>
-            <a href="/registration/">Регистрация</a>
+            <a href="{% url 'basket' %}">Корзина</a>
+        </li>
+        <li>
+            <a href="{% url 'auth:login' %}">Войти</a>
         </li>
     </ul>
 </div>

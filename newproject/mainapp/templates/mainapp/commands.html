@@ -6,7 +6,7 @@
         <ul>
             {% for item in command %}
                 <li>
-                    <a href="{% url 'commands_page' item.pk %}">
+                    <a href="{% url 'main:commands_page' item.pk %}">
                         {{ item}}
                     </a>
                 </li>

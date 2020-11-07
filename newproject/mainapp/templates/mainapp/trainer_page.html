@@ -1,0 +1,14 @@
+{% extends 'mainapp/base.html' %}
+
+{% block content %}
+    <h1>Информация о тренере</h1>
+    <p class="trainer-team">
+        Команда: {{ trainer.team }}
+    </p>
+    <p class="trainer-name">
+        Имя: {{ trainer.name }}
+    </p>
+    <p class="course-surname">
+        Фамилия: {{ trainer.surname }}
+    </p>
+{% endblock %}

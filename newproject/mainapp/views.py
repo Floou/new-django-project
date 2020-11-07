@@ -17,11 +17,11 @@ def commands(request):
     return render(request, 'mainapp/commands.html', context)
 
 
-def registration(request):
+def basket(request):
     context = {
-        'page_title': 'Регистрация'
+        'page_title': 'Корзина'
     }
-    return render(request, 'mainapp/registration.html', context)
+    return render(request, 'mainapp/basket.html', context)
 
 
 def commands_page(request, pk):
@@ -32,3 +32,11 @@ def commands_page(request, pk):
     }
     return render(request, 'mainapp/commands_page.html', context)
 
+
+def trainer_page(request, pk):
+    trainer = Trainer.objects.get(pk=pk)
+    context = {
+        'trainer': trainer,
+        'page_title': 'Информация о тренере'
+    }
+    return render(request, 'mainapp/trainer_page.html', context)

@@ -6,7 +6,7 @@
         <ul>
             {% for item in team %}
                 <li>
-                    <a href="#">
+                    <a href="{% url 'main:trainer_page' item.pk %}">
                         {{ item }}
                     </a>
                 </li>
