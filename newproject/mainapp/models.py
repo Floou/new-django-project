@@ -2,12 +2,12 @@ from django.db import models
 
 
 class Team(models.Model):
-    name_team = models.CharField('Команда', max_length=128)
+    command = models.CharField('Команда', max_length=128)
     win = models.IntegerField('Победы', default=0)
     defeat = models.IntegerField('Поражения', default=0)
 
     def __str__(self):
-        return self.name_team
+        return self.command
 
     class Meta:
         verbose_name = 'Команды'

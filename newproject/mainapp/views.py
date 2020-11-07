@@ -8,9 +8,9 @@ def index(request):
 
 
 def commands(request):
-    name_team = Team.objects.all()
+    command = Team.objects.all()
     context = {
-        'name_team': name_team,
+        'command': command,
         'page_title': 'Команды'
     }
 

@@ -4,7 +4,7 @@
     <h1>Лучшие команды сезона</h1>
      <div class="commands-menu">
         <ul>
-            {% for item in name_team %}
+            {% for item in command %}
                 <li>
                     <a href="{% url 'commands_page' item.pk %}">
                         {{ item}}
