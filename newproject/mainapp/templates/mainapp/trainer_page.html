@@ -11,4 +11,8 @@
     <p class="course-surname">
         Фамилия: {{ trainer.surname }}
     </p>
+    <a href="{% url 'basket:add' trainer.id %}"
+       class="btn btn-success">
+            Добавить
+    </a>
 {% endblock %}
