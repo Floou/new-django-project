@@ -2,7 +2,7 @@
     list-style-type: none;
     margin: 0;
     padding: 10px;
-    width: 100%;
+    width: 98%;
     background-color: #858383;
     display: inline-block;
     border-radius: 15px;
@@ -63,4 +63,13 @@ h1 {
     color: #ffffff;
     transition: 0.3s;
     border-radius: 12px;
+}
+.login-form, .register-form {
+    margin: 5vh auto;
+    width: 50%;
+}
+.form-title {
+    text-align: center;
+    font-size: large;
+    font-weight: bold;
 }
