@@ -1,5 +1,6 @@
 import authapp.views as authapp
 from django.urls import path
+from django.contrib.auth.models import User
 
 app_name = 'authapp'
 
