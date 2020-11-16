@@ -1,9 +1,7 @@
-from django.http import HttpResponseRedirect
-from django.shortcuts import render
-
 from basketapp.models import TrainerBasket
+from django.http import HttpResponseRedirect, JsonResponse
+from django.shortcuts import render
 from django.urls import reverse
-
 from mainapp.models import Trainer
 
 
@@ -29,6 +27,8 @@ def add(request, trainer_id):
 
 
 def remove(request, tr):
-    item = TrainerBasket.objects.get(id=tr)
-    item.delete()
-    return HttpResponseRedirect(request.META.get('HTTP_REFERER'))
+    if request.is_ajax():
+        item = TrainerBasket.objects.get(id=tr)
+        item.delete()
+        return JsonResponse({'status': 'ok',
+                             'tr': tr})
