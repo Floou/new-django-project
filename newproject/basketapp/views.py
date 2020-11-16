@@ -1,5 +1,34 @@
+from basketapp.models import TrainerBasket
+from django.http import HttpResponseRedirect, JsonResponse
 from django.shortcuts import render
+from django.urls import reverse
+from mainapp.models import Trainer
 
 
 def index(request):
-    return render(request, 'basketapp/basket.html')
+    items = TrainerBasket.objects.filter(user=request.user)
+    context = {
+        'object_list': items,
+    }
+
+    return render(request, 'basketapp/basket.html', context)
+
+
+def add(request, trainer_id):
+    trainer = Trainer.objects.get(pk=trainer_id)
+    TrainerBasket.objects.get_or_create(
+        user=request.user,
+        trainer=trainer
+    )
+    return HttpResponseRedirect(
+        reverse('mainapp:trainer_page',
+                kwargs={'pk': trainer.pk})
+    )
+
+
+def remove(request, tr):
+    if request.is_ajax():
+        item = TrainerBasket.objects.get(id=tr)
+        item.delete()
+        return JsonResponse({'status': 'ok',
+                             'tr': tr})
