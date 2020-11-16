@@ -6,8 +6,14 @@ from django.urls import reverse
 
 from mainapp.models import Trainer
 
+
 def index(request):
-    return render(request, 'basketapp/basket.html')
+    items = TrainerBasket.objects.filter(user=request.user)
+    context = {
+        'object_list': items,
+    }
+
+    return render(request, 'basketapp/basket.html', context)
 
 
 def add(request, trainer_id):
@@ -20,3 +26,9 @@ def add(request, trainer_id):
         reverse('mainapp:trainer_page',
                 kwargs={'pk': trainer.pk})
     )
+
+
+def remove(request, tr):
+    item = TrainerBasket.objects.get(id=tr)
+    item.delete()
+    return HttpResponseRedirect(request.META.get('HTTP_REFERER'))

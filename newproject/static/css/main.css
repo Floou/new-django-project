@@ -73,3 +73,15 @@ h1 {
     font-size: large;
     font-weight: bold;
 }
+.basket li {
+    margin: 1vh;
+}
+.btn-danger {
+    margin: 1vh;
+}
+p {
+    margin: 10px 25px;
+}
+.btn-success {
+    margin-left: 25px;
+}

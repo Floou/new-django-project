@@ -17,13 +17,6 @@ def commands(request):
     return render(request, 'mainapp/commands.html', context)
 
 
-def basket(request):
-    context = {
-        'page_title': 'Корзина'
-    }
-    return render(request, 'mainapp/basket.html', context)
-
-
 def commands_page(request, pk):
     team = Trainer.objects.filter(team_id=pk)
     context = {
