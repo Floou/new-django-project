@@ -1,85 +1,133 @@
-.main-menu ul {
-    list-style-type: none;
-    margin: 0;
-    padding: 10px;
-    width: 98%;
-    background-color: #858383;
-    display: inline-block;
-    border-radius: 15px;
+body.bd {
+    background-color: #2f3235;
 }
-
-.main-menu li {
-    float: left;
+h1 {
+    position: relative;
+    margin-right: 70%;
 }
-
-.main-menu li a {
-    display: block;
+h3 {
+    text-align: center;
+    padding-top: 10px;
     color: #ffffff;
-    padding: 8px 16px;
+}
+
+.header {
+    padding-top: 5px;
+	padding-bottom: 5px;
+    text-align: center;
+    background: #2f3235;
+    color: white;
+}
+
+.header a {
+    font-size: 25px;
+    text-decoration: none;
+    color: #ffffff;
+    position: absolute;
+    bottom: 95%;
+    right: 30px;
+}
+
+.navbar {
+    overflow: hidden;
+    background-color: #fff;
+	border-radius:10px;
     text-decoration: none;
 }
 
-.main-menu li a:hover {
-    background-color: #ffffff;
-    color: #0e0e0e;
-    transition: 0.3s;
-    border-radius: 12px;
+.navbar a {
+	float: left;
+    text-align: center;
+    padding: 14px 20px;
+    color: black;
+    border-radius: 10px;
+    text-decoration: none;
+    font-size: 20px;
+    width: calc( 100% / 4 );
+
 }
-.commands-menu ul {
+
+.navbar a:hover {
+    background-color: #2f3235;
+    color: white;
+    text-decoration: none;
+}
+.image {
+    float: left;
+    margin-left: 90px;
+    margin-top: 5px;
+}
+
+.header a:hover {
+    background-color: #fff;
+    color: black;
+	border-radius: 8px;
+    text-decoration: none;
+}
+.commands-menu  ul {
     list-style-type: none;
     padding: 10px;
     height: 85px;
 }
 .commands-menu li a {
     display: block;
-    color: #0e0e0e;
-    padding: 8px 25px;
+    color: #fffefe;
+    padding: 8px 90px;
     text-decoration: none;
 }
 
 .commands-menu li a:hover {
-    background-color: #858383;
-    color: #ffffff;
+    background-color: #ffffff;
+    color: #000000;
     transition: 0.3s;
     border-radius: 12px;
 }
-h1 {
-    text-align: center;
-}
+
 .team-menu ul {
     list-style-type: none;
     padding: 10px;
     height: 85px;
 }
+
 .team-menu li a {
     display: block;
-    color: #000000;
-    padding: 8px 25px;
+    color: #fffefe;
+    padding: 8px 90px;
     text-decoration: none;
 }
 
 .team-menu li a:hover {
-    background-color: #858383;
-    color: #ffffff;
+    background-color: #ffffff;
+    color: #000000;
     transition: 0.3s;
     border-radius: 12px;
 }
+
 .login-form, .register-form {
     margin: 5vh auto;
     width: 50%;
 }
+
 .form-title {
     text-align: center;
     font-size: large;
     font-weight: bold;
 }
+
 .basket li {
     margin: 1vh;
 }
+
 .btn-danger {
     margin: 1vh;
 }
-p {
-    margin: 10px 25px;
+
+.tr {
+    color: #ffffff;
+    font-size: 17px;
+    padding-left: 20px;
 }
 
+ul.b {
+    color: #fff;
+}
