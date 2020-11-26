@@ -131,3 +131,10 @@ h3 {
 ul.b {
     color: #fff;
 }
+img.ind {
+    display: block;
+    margin: 0 auto;
+    padding: 20px;
+    max-width: 100%;
+    height: auto;
+}
