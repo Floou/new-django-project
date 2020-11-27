@@ -2,8 +2,8 @@
 
 {% block content %}
     <div class="basket">
-        <h1>Ваша корзина ! {{ user.username|capfirst }}</h1>
-        <ul>
+        <h3>Запись</h3>
+        <ul class="b">
             {% for item in object_list %}
                 <li class="basket-item-{{ item.pk }}">
                     {{ item.to_html|safe }}
